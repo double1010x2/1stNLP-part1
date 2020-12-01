@@ -66,9 +66,9 @@ print(f"[Before change at 1st elment]: {all_review[0]}")
 print(f"[Before change at 2st elment]: {all_review[1]}")
 for ii, wi in enumerate(all_review):
     if (ii+1) % 2 == 0:
-        all_review[ii] = wi.lower() 
+        all_review[ii] = wi.lower()
     else:
-        all_review[ii] = wi.upper() 
+        all_review[ii] = wi.upper()
 print(f"[After change at 1st elment]: {all_review[0]}")
 print(f"[After change at 2st elment]: {all_review[1]}")
 # %%
@@ -81,4 +81,6 @@ print(f"[After change at 2st elment]: {all_review[1]}")
 print(f"[Before change]: {all_review[:3]}")
 all_review = ["".join((wi, "/")) for wi in all_review]
 all_review = "".join(all_review)
+#all_review = "/".join(all_review) ### from solution
 print(f"[After change]: {all_review}")
+

@@ -10,37 +10,33 @@
 
 抓出在電話號碼的所在地區以及號碼
 
-```
 ex: 02-33334444 --> 配對02, 33334444
-```
+'''
 
 
+'''
 **所需配對文本:**
-```
 02-27208889
 04-2220-3585
 (06)-2991111
 (07)799-5678
-```
+'''
 
-Ans: r"\(?(\d\d)\)?-?(\d+-?\d+)"
+Ans: "\(?(\d\d)\)?-?(\d+-?\d+)"
 
+'''
 **應配對出的結果為**
-```
 02, 27208889
 04, 22203585
 06, 2991111
 07, 7995678
-```
 '''
 
-# %%
 '''
 ### HW2: 身分證字號配對
 請配對出找出桃園(H), 台南(D), 嘉義(Q)中為男生的身分證字號(數字為1開頭)
 
 **所需配對文本:**
-```
 A121040176
 L186856359
 Z127598010
@@ -56,72 +52,68 @@ Q243556025
 Z127598010
 H250077453
 Q188367037
-```
+'''
 
-Ans: r"[HDQ]1\d+"
+Ans: "[HDQ]1\d+"
 
+'''
 **應配對出的結果為**
-```
 Q146110887
 D187217314
 Q188367037
-```
+'''
 '''
 
-# %%
-'''
 ### HW3: 電子郵件配對
 請抓出非gmail的電子郵件
 
+'''
+'''
 **所需配對文本:**
-```
 foobar@gmail.com
 NoOneCareMe@gmail.com
 SaveTheWorld@hotmail.com
 zzzGroup@yahoo.com
 eagle1963@gmail.com
 maythefourthwithyiu@starwars.com
-```
+'''
 
-Ans: r".*@(?!gmail)\w+\.com"
+Ans: ".*@(?!gmail)\w+\.com"
 
+'''
 **應配對出的結果為**
-```
 SaveTheWorld@hotmail.com
 zzzGroup@yahoo.com
 maythefourthwithyiu@starwars.com
-```
-
 '''
 
-# %%
+
 '''
 ### HW4: HTML格式配對
 
 請抓出<TAG>當中的Tag就好，裡面的屬性請排除。
 
-```
 ex: <p class='test'> --> 抓出 p
-```
+'''
 
+'''
 **所需配對文本:**
-```
 <h1>This is a header 1</h1>
 <a>This is a hyperlink</a>
 <div class='test'>This is a text block</div>
 <a href="https://regexisfun.com.tw/">Learning Regular Expression</a>
-```
+'''
 
+Ans: "<(\w+)"
+
+'''
 **應配對出的結果為**
-```
 h1
 a
 div
 a
-```
 '''
 
-# %%
 '''
 ### HW5: 特定檔案名稱與格式配對
 
@@ -129,7 +121,8 @@ a
 
 
 **所需配對文本:**
-```
+'''
+'''
 .bash_profile
 workShop.ai
 file_folderName_num.jpg
@@ -142,41 +135,43 @@ foobar.bmp
 foobar.jpg
 account.html
 access.lock
-```
+'''
 
+Ans: ".+\.(jpg|gif)$"
+
+'''
 **應配對出的結果為**
-```
 IMG_003.gif
 file_folderName_num.jpg
 foobar.jpg
-```
 '''
 
-# %%
 '''
 ### HW6: URL配對
 
 請抓出 Url 中的協定方式, 網址, 與埠
 
-```
 ex: Https://localhost:4200/ --> 抓取 Https, localhost, 4200
-```
+'''
 
+'''
 **所需配對文本:**
-```
 ftp://file_server.com:21/account/customers.xml
 https://hengxiuxu.blogspot.tw/
 file://localhost:4200
 https://s3cur3-server.com:9999/
-```
+'''
 
+Ans: "(\w+):\/\/((.+):(\d+)|(.+)\/)"
+
+
+'''
 **應配對出的結果為**
-```
 ftp, file_server, 21
 https, hengxiuxu.blogspot.tw
 file, localhost, 4200
 https, s3cur3-server.com, 9999
-```
+'''
 '''
 
 # %%
